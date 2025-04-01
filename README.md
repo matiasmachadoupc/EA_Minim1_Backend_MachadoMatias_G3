@@ -1,49 +1,9 @@
-# Prova API
+Implementació BACKEND Mínim 1 EA
 
-## Descripció
-Una API bàsica desenvolupada en Node.js amb TypeScript, utilitzant Express i Mongoose per a la gestió de dades en MongoDB. A més, s'inclou documentació amb Swagger.
+Alumne: Matias Machado Taboas Grup3
 
-## Requisits previs
-Abans d'executar el projecte, assegura't de tenir instal·lat:
-- [Node.js](https://nodejs.org/)
-- [MongoDB](https://www.mongodb.com/)
+Exercici Tipus 5
 
-## Instal·lació
-Clona el repositori i executa la següent comanda per instal·lar les dependències:
+Tots els requisits y funcionalitats complerts amb funcionament total.
 
-```sh
-npm install
-```
-
-## Configuració
-Crea un fitxer `.env` a la arrel del projecte i defineix les següents variables d'entorn//canviar les strings directament en el codi a les línies 16 (Port) i 69 (uri mongo) :
-```env
-MONGO_URI=mongodb://localhost:27017/la_teva_base_de_dades
-PORT=9000
-```
-
-## Execució
-Per iniciar l'API (tsc + cd ./build + node server.js):
-
-```sh
-npm start
-```
-
-## Documentació
-Swagger està disponible a:
-```
-http://localhost:9000/api-docs
-```
-
-## Dependències Principals
-- `dotenv`: Gestió de variables d'entorn.
-- `mongodb` i `mongoose`: Base de dades MongoDB.
-- `swagger-jsdoc` i `swagger-ui-express`: Generació de documentació.
-- `express`: Framework per a l'API.
-
-## Dependències de Desenvolupament
-- `typescript`: Suport per a TypeScript.
-- `@types/*`: Definicions de tipus per a biblioteques utilitzades.
-
-
-
+Per poder visualitzar el sistema de confianza (valoració) d'un determinat usuari, una vegada inciada la sessió amb un usuario qualsevol (ha de ser admin) presiona el botó d'edició de l'usuari el qual vols observar las puntuacions.

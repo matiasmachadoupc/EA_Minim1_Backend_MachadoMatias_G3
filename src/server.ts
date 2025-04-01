@@ -4,6 +4,7 @@ import dotenv from 'dotenv';
 import userRoutes from './modules/users/user_routes.js'; // Nota el .js al final
 import gymRoutes from './modules/gyms/gym_routes.js'; // Nota el .js al final
 import combatRoutes from './modules/combats/combat_routes.js'; // Nota el .js al final
+import ratingRoutes from './modules/rating/rating_routes.js';
 import { corsHandler } from './middleware/corsHandler.js';
 import { loggingHandler } from './middleware/loggingHandler.js';
 import { routeNotFound } from './middleware/routeNotFound.js';
@@ -42,7 +43,12 @@ const swaggerOptions = {
             {
                 name: 'Combat',
                 description: 'Rutas relacionadas con los combates',
+            },
+            {
+                name: 'Rating',
+                description: 'Rutas relacionadas con las valoraciones',
             }
+
           ],
         servers: [
             {
@@ -50,7 +56,7 @@ const swaggerOptions = {
             }
         ]
     },
-    apis: ['./modules/users/*.js', './modules/gyms/*.js', './modules/combats/*.js'] // Asegúrate de que esta ruta apunta a tus rutas
+    apis: ['./modules/users/*.js', './modules/gyms/*.js', './modules/combats/*.js', './modules/rating/*.js']  // Añadir la ruta de las anotaciones de Rating
 };
 
 const swaggerSpec = swaggerJSDoc(swaggerOptions);
@@ -70,6 +76,7 @@ app.use(corsHandler);
 app.use('/api', userRoutes);
 app.use('/api', gymRoutes);
 app.use('/api', combatRoutes);
+app.use('/api', ratingRoutes);
 // Rutes de prova
 app.get('/', (req, res) => {
     res.send('Welcome to my API');
@@ -78,7 +85,7 @@ app.get('/', (req, res) => {
 // Conexión a MongoDB
 //mongoose;
 mongoose
-    .connect(process.env.MONGODB_URI || 'mongodb://localhost:27017/proyecto')
+    .connect(process.env.MONGODB_URI || 'mongodb://localhost:27017/Projecte')
     .then(() => console.log('Connected to DB'))
     .catch((error) => console.error('DB Connection Error:', error));
 
